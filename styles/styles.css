@@ -21,6 +21,7 @@ main {
 }
 
 #gallery {
+  width: 100%;
   max-width: 1040px;
   margin: 0 auto;
 }
@@ -29,4 +30,24 @@ main {
   margin: 30px;
   float: left;
   display: inline-block;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1040px) {
+  #gallery {
+    max-width: 780px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  #gallery {
+    max-width: 520px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #gallery {
+    max-width: 260px;
+  }
 }
