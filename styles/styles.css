@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 header,
 main {
   width: 100%;
@@ -6,6 +11,7 @@ main {
 
 #navigation {
   text-align: center;
+  padding: 30px;
 }
 
 #photo-search {
@@ -13,20 +19,18 @@ main {
   width: 100%;
   max-width: 460px;
   height: auto;
-  margin: 30px auto;
   padding: 8px;
   border-radius: 4px;
   border: 2px solid lightgrey;
 }
 
 #gallery {
-  width: 100%;
-  max-width: 1055px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
 .gallery-photo {
-  display: inline-block;
+  display: inline;
 }
 
 .gallery-photo img {
@@ -36,19 +40,19 @@ main {
 
 /* Media Queries */
 
-@media screen and (max-width: 1055px) {
+@media screen and (max-width: 1040px) {
   #gallery {
-    max-width: 795px;
+    max-width: 780px;
   }
 }
 
-@media screen and (max-width: 795px) {
+@media screen and (max-width: 780px) {
   #gallery {
-    max-width: 535px;
+    max-width: 520px;
   }
 }
 
-@media screen and (max-width: 535px) {
+@media screen and (max-width: 520px) {
   #gallery {
     max-width: 260px;
   }
