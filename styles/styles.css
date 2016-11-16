@@ -4,8 +4,7 @@ main {
   height: auto;
 }
 
-#navigation,
-#gallery {
+#navigation {
   text-align: center;
 }
 
@@ -14,7 +13,7 @@ main {
   width: 100%;
   max-width: 460px;
   height: auto;
-  margin: 15px auto;
+  margin: 30px auto;
   padding: 8px;
   border-radius: 4px;
   border: 2px solid lightgrey;
@@ -22,7 +21,11 @@ main {
 
 #gallery {
   width: 100%;
-  max-width: 1040px;
+  max-width: 1055px;
+  margin: 0 auto;
+}
+
+.gallery-photo {
   margin: 0 auto;
 }
 
@@ -34,19 +37,19 @@ main {
 
 /* Media Queries */
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1055px) {
   #gallery {
-    max-width: 780px;
+    max-width: 795px;
   }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 795px) {
   #gallery {
-    max-width: 520px;
+    max-width: 535px;
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 535px) {
   #gallery {
     max-width: 260px;
   }
