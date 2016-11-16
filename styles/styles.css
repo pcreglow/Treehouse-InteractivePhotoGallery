@@ -25,10 +25,13 @@ main {
   margin: 0 auto;
 }
 
+.gallery-photo {
+  display: inline-block;
+}
+
 .gallery-photo img {
   margin: 30px;
   float: left;
-  display: inline-block;
 }
 
 /* Media Queries */
