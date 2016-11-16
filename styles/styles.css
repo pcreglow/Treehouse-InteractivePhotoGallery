@@ -25,10 +25,6 @@ main {
   margin: 0 auto;
 }
 
-.gallery-photo {
-  margin: 0 auto;
-}
-
 .gallery-photo img {
   margin: 30px;
   float: left;
