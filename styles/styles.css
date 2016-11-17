@@ -36,6 +36,7 @@ main {
 .gallery-photo img {
   margin: 30px;
   float: left;
+  opacity: .3;
 }
 
 /* Media Queries */
