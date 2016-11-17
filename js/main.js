@@ -29,11 +29,34 @@ $('#photo-search').on('keyup', function() {
 }); */
 
 
-$('#photo-search').on('keyup', function() {
+/* $('#photo-search').on('keyup', function() {
   var value = this.value;
   if ($('.gallery-photo img').find('[alt="' + value + '"]')) {
     $(this).show();
   } else {
     $(this).hide();
   }
+}); */
+
+/* Lightbox */
+
+var $lightbox = $('<div id="lightbox"></div>');
+var $image = $("<img>");
+var $caption = $("<p></p>");
+
+$lightbox.append($image);
+$lightbox.append($caption);
+$("body").append($lightbox);
+
+$(".gallery-photo a").click(function(event) {
+    event.preventDefault();
+    var photoLocation = $(this).attr("href");
+    $image.attr("src", photoLocation);
+    $lightbox.show();
+    var captionText = $(this).children("img").attr("caption");
+    $caption.text(captionText);
+});
+
+$lightbox.click(function() {
+    $lightbox.hide();
 });

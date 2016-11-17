@@ -56,6 +56,12 @@ header, main {
     text-align: center;
 }
 
+#lightbox img {
+  margin: 50px auto;
+  width: 10%;
+  height: auto;
+}
+
 #lightbox p {
     color: #fff;
 }
