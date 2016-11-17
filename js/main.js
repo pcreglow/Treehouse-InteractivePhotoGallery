@@ -1,3 +1,11 @@
+/* Make jQuery:contains Case-Insensitive - CSS Tricks */
+
+$.expr[":"].contains = $.expr.createPseudo(function(arg) {
+    return function( elem ) {
+        return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
+});
+
 /* Gallery Search */
 
 function gallerySearch(gallery) {
@@ -6,7 +14,7 @@ function gallerySearch(gallery) {
             var filter = $(this).val();
             if (filter) {
 
-                var matches = $(gallery).find('p:Contains(' + filter + ')').parent();
+                var matches = $(gallery).find('p:contains(' + filter + ')').parent();
                 $('a', gallery).not(matches).hide();
                 $(matches).show();
 
