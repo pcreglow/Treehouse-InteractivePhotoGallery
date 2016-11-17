@@ -1,6 +1,6 @@
 console.log("Hello World!");
 
-$('.gallery-photo img').each(function() {
+/* $('.gallery-photo img').each(function() {
     $(this).attr('caption', $().text().toLowerCase());
 });
 
@@ -15,4 +15,25 @@ $('#photo-search').on('keyup', function() {
             $(this).hide();
         }
     });
+}); */
+
+/* $('#photo-search').on('keyup', function() {
+  var value = this.value;
+  $('.gallery-photo img').hide().each(function() {
+     if ($(this).text().search(value) === ('img[alt="' + value + '"]')) {
+       $(this).show();
+     } else {
+       $(this).hide();
+     }
+  });
+}); */
+
+
+$('#photo-search').on('keyup', function() {
+  var value = this.value;
+  if ($('.gallery-photo img').find('[alt="' + value + '"]')) {
+    $(this).show();
+  } else {
+    $(this).hide();
+  }
 });
