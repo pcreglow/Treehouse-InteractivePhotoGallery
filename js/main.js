@@ -1,56 +1,60 @@
-/* Make jQuery:contains Case-Insensitive - CSS Tricks */
+$(document).ready(function() {
 
-$.expr[":"].contains = $.expr.createPseudo(function(arg) {
-    return function(elem) {
-        return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-    };
-});
+    /* Make jQuery:contains Case-Insensitive - CSS Tricks */
 
-/* Gallery Search */
+    $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+        return function(elem) {
+            return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+    });
 
-function gallerySearch(gallery) {
+    /* Gallery Search */
 
-    $('input').change(function() {
-            var filter = $(this).val();
-            if (filter) {
+    function gallerySearch(gallery) {
 
-                var matches = $(gallery).find('p:contains(' + filter + ')').parent();
-                $('a', gallery).not(matches).hide();
-                $(matches).show();
+        $('input').change(function() {
+                var filter = $(this).val();
+                if (filter) {
 
-            } else {
-                $(gallery).find("a").show();
-            }
-            return false;
-        })
-        .keyup(function() {
-            $(this).change();
-        });
-}
+                    var matches = $(gallery).find('p:contains(' + filter + ')').parent();
+                    $('a', gallery).not(matches).hide();
+                    $(matches).show();
 
-$(function() {
-    gallerySearch($("#gallery"));
-});
+                } else {
+                    $(gallery).find("a").show();
+                }
+                return false;
+            })
+            .keyup(function() {
+                $(this).change();
+            });
+    }
 
-/* Lightbox */
+    $(function() {
+        gallerySearch($("#gallery"));
+    });
 
-var $lightbox = $('<div id="lightbox"></div>');
-var $image = $("<img>");
-var $caption = $("<p></p>");
+    /* Lightbox */
 
-$lightbox.append($image);
-$lightbox.append($caption);
-$("body").append($lightbox);
+    var $lightbox = $('<div id="lightbox"></div>');
+    var $image = $("<img>");
+    var $caption = $("<p></p>");
 
-$(".gallery-photo a").click(function(event) {
-    event.preventDefault();
-    var photoLocation = $(this).attr("href");
-    $image.attr("src", photoLocation);
-    $lightbox.show();
-    var captionText = $(this).children("img").attr("caption");
-    $caption.text(captionText);
-});
+    $lightbox.append($image);
+    $lightbox.append($caption);
+    $("body").append($lightbox);
 
-$lightbox.click(function() {
-    $lightbox.hide();
+    $(".gallery-photo a").click(function(event) {
+        event.preventDefault();
+        var photoLocation = $(this).attr("href");
+        $image.attr("src", photoLocation);
+        $lightbox.show();
+        var captionText = $(this).children("img").attr("caption");
+        $caption.text(captionText);
+    });
+
+    $lightbox.click(function() {
+        $lightbox.hide();
+    });
+
 });
