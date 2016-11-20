@@ -37,9 +37,13 @@ $(document).ready(function() {
     /* Lightbox */
 
     var $lightbox = $('<div id="lightbox"></div>');
-    var $image = $("<img>");
-    var $caption = $("<p></p>");
+    var $previous = $('<p class="previous"><</p>')
+    var $image = $('<img>');
+    var $caption = $('<p></p>');
+    var $next = $('<p class="next">></p>')
 
+    $lightbox.append($previous);
+    $lightbox.append($next);
     $lightbox.append($image);
     $lightbox.append($caption);
     $("body").append($lightbox);
