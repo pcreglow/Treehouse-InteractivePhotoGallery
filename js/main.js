@@ -49,7 +49,7 @@ $(document).ready(function() {
         var photoLocation = $(this).attr("href");
         $image.attr("src", photoLocation);
         $lightbox.show();
-        var captionText = $(this).children("img").attr("caption");
+        var captionText = $(this).children("p").text();
         $caption.text(captionText);
     });
 
