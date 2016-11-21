@@ -51,8 +51,6 @@ $(document).ready(function() {
 
     /* Gallery Controls */
 
-    var gallery = gallerySearch($("#gallery").children("li"));
-
     $("#gallery li").click(function(event) {
         event.preventDefault();
         var photoLocation = $(this).children("a").attr("href");
