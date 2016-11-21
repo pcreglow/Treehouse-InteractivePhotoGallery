@@ -69,6 +69,8 @@ $(document).ready(function() {
     $previous.click(function(event) {
       event.stopPropagation();
       slidePreviousImage();
+      $image.show();
+      $caption.text(getLightboxCaption);
     });
 
     function getLightboxImage(image) {
@@ -88,7 +90,11 @@ $(document).ready(function() {
     }
 
     function slidePreviousImage() {
-
+      getPreviousImageParent = $(lightboxImage).parent().prev();
+      getLightboxCaption = $(getPreviousImageParent).children("p").text();
+      getPreviousImageLocation = $(getPreviousImageParent).children("a").attr("href");
+      $image.attr("src", getPreviousImageLocation);
+      getLightboxImage(getPreviousImageParent);
     }
 
     });
