@@ -1,18 +1,20 @@
+/* Global Styles */
+
 body {
     margin: 0;
     padding: 0;
 }
-
 header, main {
     width: 100%;
     height: auto;
 }
 
+/* Navigation Styles */
+
 #navigation {
     text-align: center;
     padding: 30px;
 }
-
 #photo-search {
     font-size: 16px;
     max-width: 440px;
@@ -22,29 +24,26 @@ header, main {
     border: 2px solid lightgrey;
 }
 
+/* Photo Gallery Styles */
+
 #gallery {
     max-width: 1040px;
     margin: 0 auto;
     padding: 0;
 }
-
 .gallery-photo {
     display: inline;
 }
-
 .gallery-photo a {
     text-decoration: none;
 }
-
 .gallery-photo p {
     display: none;
 }
-
 .gallery-photo img {
     margin: 30px;
     float: left;
 }
-
 
 /* Lightbox */
 
@@ -58,36 +57,30 @@ header, main {
     display: none;
     text-align: center;
 }
-
 #lightbox img {
     margin-top: 5%;
     width: 50%;
     height: auto;
     display: inline-block;
 }
-
 #lightbox p {
     color: #fff;
     font-size: 24px;
 }
-
 #lightbox .previous,
 #lightbox .next {
   font-size: 42px;
   font-weight: bold;
   margin-top: 18%;
 }
-
 #lightbox .previous {
   float: left;
   margin-left: 20%;
 }
-
 #lightbox .next {
   float: right;
   margin-right: 20%;
 }
-
 
 /* Media Queries */
 
@@ -101,22 +94,18 @@ header, main {
     #gallery {
         max-width: 520px;
     }
-
     #lightbox p {
       font-size: 18px;
       margin: 2.5%;
     }
-
     #lightbox .previous,
     #lightbox .next {
       font-size: 32px;
       margin-top: 15%;
     }
-
     #lightbox .previous {
       margin-left: 15%;
     }
-
     #lightbox .next {
       margin-right: 15%;
     }

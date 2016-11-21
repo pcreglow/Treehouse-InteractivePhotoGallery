@@ -37,10 +37,10 @@ $(document).ready(function() {
     /* Lightbox */
 
     var $lightbox = $('<div id="lightbox"></div>');
-    var $previous = $('<p class="previous"><</p>')
+    var $previous = $('<p class="previous"><</p>');
     var $image = $('<img>');
     var $caption = $('<p></p>');
-    var $next = $('<p class="next">></p>')
+    var $next = $('<p class="next">></p>');
 
 
     $lightbox.append($next);
