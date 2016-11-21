@@ -34,7 +34,7 @@ $(document).ready(function() {
         gallerySearch($("#gallery"));
     });
 
-    /* Lightbox and Gallery Controls */
+    /* Lightbox */
 
     var $lightbox = $('<div id="lightbox"></div>');
     var $previous = $('<p class="previous"><</p>')
@@ -49,7 +49,11 @@ $(document).ready(function() {
     $lightbox.append($caption);
     $("body").append($lightbox);
 
-    $(".gallery-photo").click(function(event) {
+    /* Gallery Controls */
+
+    var gallery = gallerySearch($("#gallery").children("li"));
+
+    $("#gallery li").click(function(event) {
         event.preventDefault();
         var photoLocation = $(this).children("a").attr("href");
         $image.attr("src", photoLocation);
@@ -57,50 +61,47 @@ $(document).ready(function() {
         getLightboxImage(this);
         var captionText = $(this).children("p").text();
         $caption.text(captionText);
-
+    });
 
     $next.click(function(event) {
-      event.stopPropagation();
-      slideNextImage();
-      $image.show();
-      $caption.text(getLightboxCaption);
+        event.stopPropagation();
+        slideNextImage();
+        $image.show();
+        $caption.text(getLightboxCaption);
     });
 
     $previous.click(function(event) {
-      event.stopPropagation();
-      slidePreviousImage();
-      $image.show();
-      $caption.text(getLightboxCaption);
+        event.stopPropagation();
+        slidePreviousImage();
+        $image.show();
+        $caption.text(getLightboxCaption);
     });
 
     function getLightboxImage(image) {
-      lightboxImage = $(image).children("a").next();
-      lightboxCaption = $(image).children("p").next().text();
-      lightboxImageLocation = $(lightboxImage).attr("href");
-      $image.attr("src", lightboxImageLocation);
-      $caption.text(lightboxCaption);
+        lightboxImage = $(image).children("a").next();
+        lightboxCaption = $(image).children("p").next().text();
+        lightboxImageLocation = $(lightboxImage).attr("href");
+        $image.attr("src", lightboxImageLocation);
+        $caption.text(lightboxCaption);
     }
 
     function slideNextImage() {
-      getNextImageParent = $(lightboxImage).parent().next();
-      getLightboxCaption = $(getNextImageParent).children("p").text();
-      getNextImageLocation = $(getNextImageParent).children("a").attr("href");
-      $image.attr("src", getNextImageLocation);
-      getLightboxImage(getNextImageParent);
+        getNextImageParent = $(lightboxImage).parent().next();
+        getLightboxCaption = $(getNextImageParent).children("p").text();
+        getNextImageLocation = $(getNextImageParent).children("a").attr("href");
+        $image.attr("src", getNextImageLocation);
+        getLightboxImage(getNextImageParent);
     }
 
     function slidePreviousImage() {
-      getPreviousImageParent = $(lightboxImage).parent().prev();
-      getLightboxCaption = $(getPreviousImageParent).children("p").text();
-      getPreviousImageLocation = $(getPreviousImageParent).children("a").attr("href");
-      $image.attr("src", getPreviousImageLocation);
-      getLightboxImage(getPreviousImageParent);
+        getPreviousImageParent = $(lightboxImage).parent().prev();
+        getLightboxCaption = $(getPreviousImageParent).children("p").text();
+        getPreviousImageLocation = $(getPreviousImageParent).children("a").attr("href");
+        $image.attr("src", getPreviousImageLocation);
+        getLightboxImage(getPreviousImageParent);
     }
-
-    });
 
     $lightbox.click(function() {
         $lightbox.hide();
     });
-
 });
